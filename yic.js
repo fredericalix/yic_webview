@@ -335,7 +335,7 @@ function updateUILayout(layout) {
     }
 
     function deleteLayout(id) {
-        fetch('/ui/layout/'+id, {
+        fetch('https://yicui.cleverapps.io/ui/layout/'+id, {
             method: 'DELETE',
             credentials: 'same-origin',
         }).then(updateUILayout);
@@ -507,7 +507,7 @@ function uuidv4() {
  */
 
 function updateToken() {
-    fetch("/account/token", {
+    fetch("https://yicauth.cleverapps.io/account/token", {
         credentials: 'same-origin',
     })
     .then(response => response.json())
@@ -517,7 +517,7 @@ function updateToken() {
 }
 
 function updateTokenType() {
-    fetch('/auth/roles')
+    fetch('https://yicauth.cleverapps.io/auth/roles')
     .then(res => res.json())
     .then(roles => {
         let select = document.getElementById('token_type');
@@ -537,7 +537,7 @@ function updateTokenType() {
 function createToken(event) {
     if (event) { event.preventDefault(); }
 
-    fetch('/account/token', {
+    fetch('https://yicauth.cleverapps.io/account/token', {
         method: 'POST',
         headers: {
             "Content-Type": "application/json",
@@ -560,7 +560,7 @@ function token_table(props) {
     function handleRevoke(e, token) {
         e.preventDefault();
         console.log(e, token)
-        fetch('/account/token/'+token, {
+        fetch('https://yicauth.cleverapps.io/account/token/'+token, {
             method: 'DELETE',
             credentials: 'same-origin',
         }).then(updateToken);
@@ -851,7 +851,7 @@ const simulator = {
         sendOnChange: true,
     },
     send() {
-        fetch("/sensors", {
+        fetch("https://yicsensor.cleverapps.io/sensors", {
             method: 'POST',
             headers: {"Content-Type": "application/json"},
             credentials: 'same-origin',
