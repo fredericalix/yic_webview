@@ -15,11 +15,11 @@
 
     ## use insecure_skip_verify for local dev only.
     ## It's to not verify self-signed certificate of the service.
-    proxy /renew    https://yicauth.cleverapps.io { transparent }
-    proxy /auth     https://yicauth.cleverapps.io { transparent }
-    proxy /account  https://yicauth.cleverapps.io { transparent }
-    proxy /sensors  https://yicsensor.cleverapps.io { transparent  }
-    proxy /sse      https://yicsse.cleverapps.io { transparent  }
-    proxy /ui       https://yicui.cleverapps.io { transparent  }
+    proxy /renew    https://yicauth.cleverapps.io { transparent insecure_skip_verify }
+    proxy /auth     https://yicauth.cleverapps.io { transparent insecure_skip_verify}
+    proxy /account  https://yicauth.cleverapps.io { transparent insecure_skip_verify }
+    proxy /sensors  https://yicsensor.cleverapps.io { transparent insecure_skip_verify }
+    proxy /sse      https://yicsse.cleverapps.io { transparent insecure_skip_verify }
+    proxy /ui       https://yicui.cleverapps.io { transparent insecure_skip_verify }
 # insecure_skip_verify
 }
