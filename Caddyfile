@@ -1,0 +1,25 @@
+:8080 {
+    log stdout
+
+    ## !! important to not include sse
+    gzip {
+        not /sse
+    }
+
+    ## serve web interface
+    root web-view
+
+    ## use for dev https
+    # tls cert.pem key.pem
+    # tls self_signed
+
+    ## use insecure_skip_verify for local dev only.
+    ## It's to not verify self-signed certificate of the service.
+    proxy /renew    https://yicauth.cleverapps.io { transparent }
+    proxy /auth     https://yicauth.cleverapps.io { transparent }
+    proxy /account  https://yicauth.cleverapps.io { transparent }
+    proxy /sensors  https://yicsensor.cleverapps.io { transparent  }
+    proxy /sse      https://yicsse.cleverapps.io { transparent  }
+    proxy /ui       https://yicui.cleverapps.io { transparent  }
+# insecure_skip_verify
+}

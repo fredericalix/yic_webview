@@ -1,0 +1,323 @@
+body {
+    background: hsl(0, 0%, 100%);
+    margin: 0;
+}
+
+/*
+ * Navigation
+ */
+nav {
+    overflow: hidden;
+    background: #ffffff; /* #eee8d5; */
+    position: fixed;        /* Set the navbar to fixed position */
+    top: 0;                 /* Position the navbar at the top of the page */
+    width: 100%;            /* Full width */
+    height: 54px;
+
+    display: grid;
+    grid-template-columns: 2fr 3fr 4fr 1fr;
+    grid-template-rows: 54px;
+
+    box-shadow: 0 1px 4px 0 rgba(3, 36, 8, 0.3);
+}
+nav a.youritcity {
+    font-size:  2em;
+    font-weight: bold;
+    text-decoration: none;
+    color: #fd6a00;
+    margin: auto;
+}
+
+
+nav button {
+    border: none;
+    outline: none;
+    cursor: pointer;
+    text-align: center;
+    height: 100%;
+    background: hsl(0, 0%, 94%);
+    padding: 0px 10px 0px;
+    border-left: 1px solid #d1cbb8;
+}
+
+nav button:hover {
+    background: #dc322f;
+    color: #fefefe
+}
+
+nav #last_sse_time {
+    text-align: right;
+    font-size: 0.9em;
+    /* height: 100%; */
+    margin: auto;
+    padding-right: 10px;
+    /* padding: 0px 10px 0px; */
+}
+
+.logobk {
+    position: relative;
+    top: 4px;
+    z-index: 10;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    width: 100px;
+    height: 100px;
+    border-radius: 50%;
+    box-shadow: 0 1px 4px 0 rgba(3, 36, 8, 0.4);
+}
+.logobk img {
+    z-index: 999;
+    background: #ffffff;
+    display: block;
+    margin: auto;
+    width: 100%;
+    height: 100%;
+    border-radius: 50%;
+    /* box-shadow: 0 1px 4px 0 rgba(3, 36, 8, 0.3); */
+}
+
+
+
+/*
+ * Login / Signup
+ */
+#wrapper_login {
+    background: white;
+    text-align: center;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+    width: 360px;
+    margin: 120px auto 15px;
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper_login {
+        width: 100%;
+        margin-top: 50px;
+        border-left: none;
+        border-right: none;
+    }
+
+    .logobk{
+        top:40px;
+    }
+}
+
+.tab {
+    display: grid;
+    grid-template-columns: 1fr 1fr;
+    overflow: hidden;
+    background-color: #f5f5f5;
+
+    border-bottom: 1px solid rgba(0, 0, 0, 0.15);
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+}
+
+/* Style the buttons that are used to open the tab content */
+.tab button {
+    background-color: inherit;
+    color: #268bd2;
+    font-weight:  bold;
+    border: none;
+    outline: none;
+    cursor: pointer;
+    height: 56px;
+    transition: 0.3s;
+    border-bottom: 2px solid transparent ; /* rgba(0, 0, 0, 0.15); */
+}
+
+.tab button:first {
+    border-left: 1px solid #93a1a1;
+}
+
+.tab button.active {
+    border-bottom: 2px solid #268bd2;
+}
+
+.tab button:not(.active):hover {
+    opacity: 0.8;
+    border-bottom: 2px solid #93a1a1;
+    color: #268bd2;
+}
+
+form {
+    margin: 30px;
+    /* margin-top: 10px; */
+    display: subgrid;
+    display: grid;
+    grid-auto-columns: 1fr;
+    grid-gap: 30px;
+    grid-auto-flow: row; 
+}
+
+form h1 {
+    text-align: center;
+    padding: 15px;
+    margin: 0px;
+    color: #fd6a00;
+}
+form input, select {
+    height: 48px;
+    padding-left: 15px;
+    background: hsl(0, 0%, 98%);
+    color: #002b36;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+    transition: 0.2s ease;
+}
+form input:focus, select:focus {
+    color: #268bd2;
+    border: 1px solid #268bd2;
+    transition: 0.2s ease;
+}
+
+form button {
+    background: #64c533;
+    color: #fff;
+    outline: 0;
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+    padding: 15px;
+    cursor: pointer;
+}
+form button:hover,
+form button:active {
+    opacity: 0.8;
+    box-shadow: 0 2px 4px rgba(0, 0, 0, 0.4);
+    transition: 0.1s ease;
+}
+
+button .spining {
+    background: #268bd2;
+}
+
+.signup_error,
+.login_error {
+    background: #dc322f30;
+    color: #073642;
+    outline: 0;
+    border: 1px solid #dc322f;
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+    padding: 15px;
+}
+
+
+/*
+ * Table
+ */
+table {
+    /* width: 100%; */
+    border-collapse: collapse;
+}
+th, td {
+    padding: 8px;
+    text-align: left;
+}
+
+table tr {
+    border-bottom: 1px solid hsl(0, 0%, 90%);
+}
+
+
+/*
+ * Validation
+ */
+#wrapper_validation {
+    background: white;
+    text-align: center;
+
+    border: 1px solid rgba(0, 0, 0, 0.15);
+    border-radius: 3px;
+    box-shadow: 0 1px 4px 0 rgba(12, 12, 13, 0.1);
+    width: 90%;
+    margin: 90px auto 15px;
+    /* padding: 30px; */
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper_validation {
+        border-left: none;
+        border-right: none;
+        width: 100%;
+    }
+}
+
+/*
+ * Token
+ */
+#wrapper_token {
+    /* margin: 16px; */
+    margin-bottom: 64px;
+}
+#wrapper_token form {
+    display: grid;
+    grid-auto-columns: 1fr 1fr 1fr;
+    grid-auto-flow: column;
+}
+.monospace {
+    font-family: monospace;
+}
+
+@media screen and (max-width: 480px) {
+    #wrapper_token form {
+        grid-auto-columns: 1fr;
+    }
+}
+
+/*
+ * City
+ */
+#wrapper_city {
+    margin: 16px;
+    /* width: 100%;
+    height: 100%; */
+}
+
+/*
+ * Sensors
+ */
+#sensors-list {
+    font-family: monospace;
+}
+
+/*
+ * UI Layout
+ */
+#jsoneditor {
+    height: 100%;
+}
+
+
+/*
+ * Workflow
+ */
+.operation_list {
+    display: grid;
+    grid-gap: 4px;
+    grid-template-columns: repeat( auto-fit, minmax(160px, 1fr) );
+}
+
+.operation {
+    padding: 4px 16px;
+    margin: 0;
+}
+
+.operation h3 {
+    color: #268bd2;
+    margin: 0;
+    margin-bottom: 0.4em;
+}
+.operation p {
+    font-size: 0.89em;
+}
+
+.operation:hover {
+    background-color: hsl(0, 0%, 98%)
+}
