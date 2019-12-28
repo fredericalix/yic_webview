@@ -109,7 +109,7 @@ function signup(event) {
     var res = document.getElementById("signup_result");
 
     var xhr = new XMLHttpRequest();
-    var url = "/auth/signup";
+    var url = "https://yicauth.cleverapps.io/auth/signup";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onload = function (event) {
@@ -161,7 +161,7 @@ function login(event) {
     var res = document.getElementById("login_result");
 
     var xhr = new XMLHttpRequest();
-    var url = "/auth/login";
+    var url = "https://yicauth.cleverapps.io/auth/login";
     xhr.open("POST", url, true);
     xhr.setRequestHeader("Content-type", "application/json");
     xhr.onload = function (event) {
@@ -210,7 +210,7 @@ function callSSE() {
         return;
     }
 
-    var sse = new EventSource("/sse") //, { authorizationHeader: session_token});
+    var sse = new EventSource("https://yicsse.cleverapps.io/sse") //, { authorizationHeader: session_token});
 
     sse.addEventListener('open', function () {
         sse_active = true;
@@ -468,7 +468,7 @@ function send_layout(layout) {
     console.log(layout)
 
     var xhr = new XMLHttpRequest();
-    var url = "/ui/layout";
+    var url = "https://yicui.cleverapps.io/ui/layout";
     xhr.open("POST", url, true);
     xhr.withCredentials = true;
     xhr.setRequestHeader("Content-type", "application/json");
